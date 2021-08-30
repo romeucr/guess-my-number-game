@@ -1,16 +1,29 @@
 'use strict'
 
-const secretNumber = Math.trunc(Math.random() * 20) + 1
+let secretNumber = Math.trunc(Math.random() * 20) + 1
 const initialScore = 20
 let score = initialScore
 
 document.querySelector('.score').textContent = initialScore
-document.querySelector('.number').textContent = secretNumber
 
-// handler function
+// AGAIN BUTTON
+document.querySelector('.again').addEventListener('click', function () {
+  // reset variables
+  score = initialScore
+  secretNumber = Math.trunc(Math.random() * 20) + 1
+  // reset styles
+  document.querySelector('body').style.backgroundColor = '#222'
+  document.querySelector('.number').style.width = '15rem'
+  // reset content
+  document.querySelector('.number').textContent = '?'
+  document.querySelector('.guess').value = ''
+  document.querySelector('.message').textContent = 'Start guessing...'
+  document.querySelector('.score').textContent = score
+})
+
+// CHECK BUTTON
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value)
-  console.log(guess, typeof guess)
 
   // there is no input
   if (!guess) {
@@ -18,6 +31,7 @@ document.querySelector('.check').addEventListener('click', function () {
     // win
   } else if (guess === secretNumber) {
     document.querySelector('.message').textContent = '🏆 Correct Number!'
+    document.querySelector('.number').textContent = secretNumber
     document.querySelector('body').style.backgroundColor = '#60b347'
     document.querySelector('.number').style.width = '30rem'
     // too high
