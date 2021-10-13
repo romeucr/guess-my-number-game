@@ -21,7 +21,7 @@ document.querySelector('.again').addEventListener('click', function () {
   score = initialScore
   secretNumber = Math.trunc(Math.random() * 20) + 1
   // reset styles
-  document.querySelector('body').style.backgroundColor = '#222'
+  document.querySelector('body').style.backgroundColor = '#eee'
   document.querySelector('.number').style.width = '15rem'
   // reset content
   document.querySelector('.number').textContent = '?'

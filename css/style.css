@@ -14,8 +14,8 @@ html {
 body {
   font-family: 'Press Start 2P', sans-serif;
   color: #eee;
-  background-color: #222;
-  /* background-color: #60b347; */
+  width: 50%;
+  margin: 50px auto;
 }
 
 /* LAYOUT */
@@ -23,14 +23,16 @@ header {
   position: relative;
   height: 35vh;
   border-bottom: 7px solid #eee;
+  background-color: #222;
 }
 
 main {
-  height: 65vh;
+  height: 55vh;
   color: #eee;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  background-color: #222;
 }
 
 .left {
